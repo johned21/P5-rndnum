@@ -7,44 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RndNumbersComponent implements OnInit {
 
-  constructor() { }
+  constructor() { this.generaterandom() }
 
   ngOnInit(): void {
   }
 
+  rndnumber:any = []
+
+  generaterandom(){
+    for(var i=0; i<6; i++){
+      this.rndnumber.push(Math.floor(Math.random() * 46) + 1);
+    }
+  }
 
   result:any;
 
-  rndNumber1 = Math.floor(Math.random() * 46) + 1;
-  rndNumber2 = Math.floor(Math.random() * 46) + 1;
-  rndNumber3 = Math.floor(Math.random() * 46) + 1;
-  rndNumber4 = Math.floor(Math.random() * 46) + 1;
-  rndNumber5 = Math.floor(Math.random() * 46) + 1;
-  rndNumber6 = Math.floor(Math.random() * 46) + 1;
-
-
-  clickedrndNumber1(){
-    this.result = this.rndNumber1;
-  }
-
-  clickedrndNumber2(){
-    this.result = this.rndNumber2;
-  }
-
-  clickedrndNumber3(){
-    this.result = this.rndNumber3;
-  }
-
-  clickedrndNumber4(){
-    this.result = this.rndNumber4;
-  }
-
-  clickedrndNumber5(){
-    this.result = this.rndNumber5;
-  }
-
-  clickedrndNumber6(){
-    this.result = this.rndNumber6;
+  resultnum(num:number){
+    this.result = num
   }
 
 }
